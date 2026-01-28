@@ -1,0 +1,27 @@
+baseURL = 'https://cyber.jackrschumacher.com'
+languageCode = 'en-us'
+title = 'Cybersecurity Notes'
+
+# MOVE THIS TO THE TOP LEVEL (OUT OF PARAMS)
+enableGitInfo = true
+
+# ADD THIS BLOCK
+[frontmatter]
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+
+[module]
+  [[module.imports]]
+    path = 'github.com/alex-shpak/hugo-book'
+
+[params]
+  BookSection = 'cyber-notes'
+  BookTheme = 'auto'
+  BookSearch = true
+  BookDateFormat = 'January 2, 2006'
+  # This specific theme parameter relies on enableGitInfo being true at the top level
+  BookLastChangeLink = 'https://github.com/jackrschumacher/cyber-notes/commit/{{ .GitInfo.Hash }}'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
