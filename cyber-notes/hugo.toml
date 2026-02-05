@@ -17,6 +17,7 @@ enableGitInfo = true
   BookSection = 'cyber-notes'
   BookTheme = 'auto'
   BookSearch = true
+  BookFavicon = 'favicon-32x32.png'
   BookDateFormat = 'January 2, 2006'
   # This specific theme parameter relies on enableGitInfo being true at the top level
   BookLastChangeLink = 'https://github.com/jackrschumacher/cyber-notes/commit/{{ .GitInfo.Hash }}'
