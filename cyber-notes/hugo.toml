@@ -14,7 +14,7 @@ enableGitInfo = true
     path = 'github.com/alex-shpak/hugo-book'
 
 [params]
-  BookSection = 'cyber-notes'
+  BookSection = '*'
   BookTheme = 'auto'
   BookSearch = true
   BookFavicon = 'favicon-32x32.png'
