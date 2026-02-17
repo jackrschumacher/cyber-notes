@@ -11,6 +11,7 @@ weight: 2
 <br>
 
 {{% steps %}}
+1. 2/17/2026: Added more Log Analysis tools, added specific log analysis file types
 1. 2/16/2026: Added Log analysis tools
 1. 2/14/2026: Initial site setup
 
