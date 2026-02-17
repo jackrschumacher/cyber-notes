@@ -1,8 +1,9 @@
 ---
-title: Log analysis tools
+title: Terminal tools
+weight: 1
 ---
 
-# Tools
+# Parsing tools
 
 ## grep
 
@@ -47,13 +48,23 @@ grep '[search]' [filename.txt]
 
 {{< button href="https://man7.org/linux/man-pages/man1/head.1.html" >}}head man page{{< /button >}}
 
-# Examples
+## Sort
 
-## Search
+### Options
 
-### Searching for usernames
+```
+-rn, print items in reverse numerical order
+```
 
-#### Unique usernames
+
+
+## Examples
+
+### Search
+
+#### Searching for usernames
+
+##### Unique usernames
 
 ```bash
 # (Replace $N with the column number where the username is located).
@@ -80,3 +91,28 @@ awk '{print $5}' filename.log | sort | uniq -c | sort -nr
 *   **`sort -nr`**: Sorts the final result numerically (`-n`) in reverse (`-r`), putting the most frequent users at the top.
 
 - Can also add more columns to provide additional information
+- Also helpful to use `head` to only show the top items (and the `-n` flag to only show a number of results)
+
+#### Searching for IP Addresses
+
+##### Counting unique IP addresses
+
+ ```bash
+ cat [file] | cut -d " " -f 1 | sort | uniq | wc -l
+ ```
+
+- Take the file, `cut` the first field (or whatever field contains the IP addresses), sort the unique addresses, and get a line count using `wc`
+- Can modify the `cut` statement in order to look
+- Can also add another `cut -d ' ' -f #` statement to print additional fields
+- You can also sometimes use the `awk` command instead of the `cut` command for this purpose
+
+##### Looking for unique IP response codes
+
+```bash
+cat [file] | cut -d '"' -f [] | cut -d ' ' -f [] | sort | uniq -c | sort -rn
+```
+
+- `cat` out the file and `cut` fields, sort, get unique values, sort in descending order using `sort -rn`
+
+
+
