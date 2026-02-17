@@ -21,14 +21,72 @@ grep '[search]' [filename.txt]
 
 ```
 -i, --ignore-case
-              Ignore case distinctions in patterns and input data, so
-              that characters that differ only in case match each other.
--n, --line-number
-              Prefix each line of output with the 1-based line number
-              within its input file.
--v, --invert-match
-          Invert the sense of matching, to select non-matching lines.
+            Ignore case distinctions in patterns and input data, so
+            that characters that differ only in case match each other.
 
+-v, --invert-match
+            Invert the sense of matching, to select non-matching lines.
+
+-w, --word-regexp
+            Select only those lines containing matches that form whole
+            words.
+
+-x, --line-regexp
+            Select only those lines that exactly match the whole line.
+
+-c, --count
+            Suppress normal output; instead print a count of matching
+            lines for each input file.
+
+-l, --files-with-matches
+            Suppress normal output; instead print the name of each
+            input file from which output would normally have been
+            printed.
+
+-L, --files-without-match
+            Suppress normal output; instead print the name of each
+            input file from which no output would have been printed.
+
+-m NUM, --max-count=NUM
+            Stop reading a file after NUM matching lines.
+
+-o, --only-matching
+            Print only the matched (non-empty) parts of a matching
+            line, with each such part on a separate output line.
+
+-n, --line-number
+            Prefix each line of output with the 1-based line number
+            within its input file.
+
+-B NUM, --before-context=NUM
+            Print NUM lines of leading context before matching lines.
+
+-A NUM, --after-context=NUM
+            Print NUM lines of trailing context after matching lines.
+
+-C NUM, --context=NUM
+            Print NUM lines of output context.
+
+-r, --recursive
+            Read all files under each directory, recursively. Follows
+            symbolic links only if they are on the command line.
+
+--exclude=GLOB
+            Skip files whose base name matches GLOB (using wildcard
+            matching).
+
+--include=GLOB
+            Search only files whose base name matches GLOB.
+
+-E, --extended-regexp
+            Interpret PATTERNS as extended regular expressions (EREs).
+
+-F, --fixed-strings
+            Interpret PATTERNS as fixed strings, not regular expressions.
+
+-P, --perl-regexp
+            Interpret PATTERNS as Perl-compatible regular expressions
+            (PCREs).
 
 ```
 
