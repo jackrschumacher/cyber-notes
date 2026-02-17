@@ -62,16 +62,16 @@ grep '[search]' [filename.txt]
 
 ### Search
 
-#### Searching for usernames
+#### Searching for text
 
-##### Unique usernames
+##### Unique text
 
 ```bash
 # (Replace $N with the column number where the username is located).
 awk '{print $N}' filename.log | sort | uniq
 ```
 
-##### Counting usernames
+##### Counting text
 
 - Use `wc -l` to count the number of times something occurs
 
@@ -80,7 +80,7 @@ awk '{print $N}' filename.log | sort | uniq
 awk '{print $N}' filename.log | sort | uniq | wc -l
 ```
 
-##### Showing frequency of usernames
+##### Showing frequency of strings
 
 ```bash
 awk '{print $5}' filename.log | sort | uniq -c | sort -nr
@@ -94,6 +94,10 @@ awk '{print $5}' filename.log | sort | uniq -c | sort -nr
 - Also helpful to use `head` to only show the top items (and the `-n` flag to only show a number of results)
 
 #### Searching for IP Addresses
+
+> [!NOTE]
+>
+> This is intended for log files that contain addresses in columns
 
 ##### Counting unique IP addresses
 
