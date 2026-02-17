@@ -29,9 +29,28 @@ grep '[search]' [filename.txt]
 -v, --invert-match
           Invert the sense of matching, to select non-matching lines.
 
+
 ```
 
+### Regex
+
+| Goal                  | Pattern | Flag | Example Command            |
+| :-------------------- | :------ | :--- | :------------------------- |
+| **Any single char**   | `.`     | None | `grep "c.t" file`          |
+| **Start of line**     | `^`     | None | `grep "^Start" file`       |
+| **End of line**       | `$`     | None | `grep "End$" file`         |
+| **Zero or more reps** | `*`     | None | `grep "ab*c" file`         |
+| **"True" Wildcard**   | `.*`    | None | `grep "user.*login" file`  |
+| **One specific char** | `[ ]`   | None | `grep "H[ae]llo" file`     |
+| **One or more reps**  | `+`     | `-E` | `grep -E "go+gle" file`    |
+| **Optional (0 or 1)** | `?`     | `-E` | `grep -E "colou?r" file`   |
+| **Logical OR**        | `\|`    | `-E` | `grep -E "cat\|dog" file`  |
+| **Exact repetitions** | `{n}`   | `-E` | `grep -E "9{3}" file`      |
+| **Literal dot/star**  | `\.`    | None | `grep "example\.com" file` |
+
 ## wc
+
+- Can be used to count lines using the `wc -l` command
 
 ## uniq
 
