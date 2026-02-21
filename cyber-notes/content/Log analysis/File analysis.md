@@ -110,11 +110,58 @@ grep '[search]' [filename.txt]
 
 - Can be used to count lines using the `wc -l` command
 
+### Options
+
+| Short Option | Long Option         | Description                                                  |
+| ------------ | ------------------- | ------------------------------------------------------------ |
+| `-l`         | `--lines`           | Prints the number of lines (specifically, newline characters). |
+| `-w`         | `--words`           | Prints the number of words (whitespace-delimited).           |
+| `-c`         | `--bytes`           | Prints the number of bytes.                                  |
+| `-m`         | `--chars`           | Prints the number of characters (useful for multi-byte encodings like UTF-8). |
+| `-L`         | `--max-line-length` | Prints the length of the longest line in the file.           |
+|              | `--files0-from=F`   | Reads input from files whose names are listed in file `F`, separated by NUL characters. |
+|              | `--help`            | Displays the help message and exits.                         |
+|              | `--version`         | Displays version information and exits.                      |
+
 ## uniq
 
 - Can be used to filter out non-unique 
 
+
+
+### Options
+
+| Short Option | Long Option               | Description                                                 |
+| ------------ | ------------------------- | ----------------------------------------------------------- |
+| `-c`         | `--count`                 | Prefixes lines by the number of occurrences.                |
+| `-d`         | `--repeated`              | Only prints duplicate lines, one for each group.            |
+| `-D`         |                           | Prints all duplicate lines.                                 |
+|              | `--all-repeated[=METHOD]` | Like `-D`, but allows separating groups with an empty line. |
+| `-f N`       | `--skip-fields=N`         | Avoids comparing the first `N` fields.                      |
+| `-i`         | `--ignore-case`           | Ignores differences in case when comparing lines.           |
+| `-s N`       | `--skip-chars=N`          | Avoids comparing the first `N` characters.                  |
+| `-u`         | `--unique`                | Only prints unique lines (lines that do not repeat).        |
+| `-w N`       | `--check-chars=N`         | Compares no more than `N` characters in lines.              |
+| `-z`         | `--zero-terminated`       | Line delimiter is NUL, not newline.                         |
+|              | `--help`                  | Displays the help message and exits.                        |
+|              | `--version`               | Displays version information and exits.                     |
+
 ## awk
+
+### Options
+
+| Short Option | Long Option               | Description                                                  |
+| ------------ | ------------------------- | ------------------------------------------------------------ |
+| `-F fs`      | `--field-separator=fs`    | Sets the input field separator to the regular expression `fs` (defaults to whitespace). |
+| `-v var=val` | `--assign=var=val`        | Assigns the value `val` to the user-defined variable `var` before execution begins. |
+| `-f file`    | `--file=file`             | Reads the awk program source from `file` instead of the command line. |
+| `-e prog`    | `--source=prog`           | Uses `prog` as awk program source code (useful for combining file and command-line scripts). |
+| `-b`         | `--characters-as-bytes`   | Treats all input data as single-byte characters, ignoring locale encoding. |
+| `-O`         | `--optimize`              | Enables internal optimizations on the program's execution (specific to GNU awk). |
+| `-i file`    | `--include=file`          | Includes an awk source library from `file` before running the main program. |
+| `-d[file]`   | `--dump-variables[=file]` | Prints a sorted list of global variables and their types/values to `file` (defaults to `awkvars.out`). |
+|              | `--help`                  | Displays the help message and exits.                         |
+|              | `--version`               | Displays version information and exits.                      |
 
 ## head
 
@@ -125,13 +172,38 @@ grep '[search]' [filename.txt]
 
 {{< button href="https://man7.org/linux/man-pages/man1/head.1.html" >}}head man page{{< /button >}}
 
+### Options
+
+| Short Option | Long Option           | Description                                                  |
+| ------------ | --------------------- | ------------------------------------------------------------ |
+| `-n NUM`     | `--lines=[-]NUM`      | Prints the first `NUM` lines (defaults to 10). If preceded by `-`, prints all but the last `NUM` lines. |
+| `-c NUM`     | `--bytes=[-]NUM`      | Prints the first `NUM` bytes. If preceded by `-`, prints all but the last `NUM` bytes. |
+| `-q`         | `--quiet`, `--silent` | Never prints headers giving file names (useful when passing multiple files). |
+| `-v`         | `--verbose`           | Always prints headers giving file names.                     |
+| `-z`         | `--zero-terminated`   | Line delimiter is NUL, not newline.                          |
+|              | `--help`              | Displays the help message and exits.                         |
+|              | `--version`           | Displays version information and exits.                      |
+
 ## Sort
 
 ### Options
 
-```
--rn, print items in reverse numerical order
-```
+| Short Option | Long Option               | Description                                                  |
+| ------------ | ------------------------- | ------------------------------------------------------------ |
+| `-n`         | `--numeric-sort`          | Sorts numerically (e.g., 10 comes after 2, instead of before it as in string sorting). |
+| `-h`         | `--human-numeric-sort`    | Sorts by human-readable numbers (e.g., 2K, 1M, 3G).          |
+| `-r`         | `--reverse`               | Reverses the sorting order (descending instead of ascending). |
+| `-k KEYDEF`  | `--key=KEYDEF`            | Sorts by a specific column or key (e.g., `-k 2` sorts by the second column). |
+| `-t SEP`     | `--field-separator=SEP`   | Uses `SEP` as the column separator instead of whitespace (e.g., `-t ','` for CSVs). |
+| `-u`         | `--unique`                | Outputs only the first instance of an identical run (acts like a built-in `uniq`). |
+| `-f`         | `--ignore-case`           | Ignores case differences when sorting (folds lowercase into uppercase). |
+| `-b`         | `--ignore-leading-blanks` | Ignores leading whitespace when comparing lines.             |
+| `-M`         | `--month-sort`            | Sorts by month abbreviations (e.g., JAN, FEB, MAR).          |
+| `-V`         | `--version-sort`          | Sorts by version numbers naturally (e.g., 1.10 comes after 1.2). |
+| `-o FILE`    | `--output=FILE`           | Writes the sorted output directly to `FILE` instead of standard output. |
+| `-c`         | `--check`                 | Checks if the file is already sorted. If it is, no output is produced; if not, it prints an error. |
+|              | `--help`                  | Displays the help message and exits.                         |
+|              | `--version`               | Displays version information and exits.                      |
 
 
 
