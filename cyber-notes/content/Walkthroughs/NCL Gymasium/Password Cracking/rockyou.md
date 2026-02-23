@@ -16,7 +16,7 @@ date: 2026-02-21
 
 In this challenge, you will use the `rockyou.txt` password wordlist to crack a list of hashed passwords stated to be "hacker passwords". 
 
-![](/images/kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-00-11 AM.png)
+<img src="/images/kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-00-11 AM.png" alt="kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-00-11 AM" style="zoom:67%;" />
 
 ## Setup
 
@@ -26,7 +26,7 @@ To use the `rockyou` wordlist, or some other wordlists in kali you may need to e
 
 1. First you must extract the passwords and save them to a file so it is more easy to pass the files into `hashcat` to identify the hash type in the next step. To do this you could use a simple notepad application to create the `.txt` file or could use command line tools like `nano` or `micro`.
 
-   ![kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-07-07 AM](/images/kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-07-07 AM.png)
+   <img src="/images/kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-07-07 AM.png" alt="kali-linux-2025.4-vmware-amd64_-_VMware_Workstatio_02_22_26_12-07-07 AM" style="zoom:75%;" />
 
 2. To identify the hash, you can use the `hashcat` terminal command built into Kali. To do this, simply use the terminal command, replacing `rockyouhash.txt` with the name of your own file:
 
@@ -79,7 +79,11 @@ To use the `rockyou` wordlist, or some other wordlists in kali you may need to e
 5. After completing the run, `hashcat` should return something like the following:
 
    ```
-   [Cracked passwords]
+   32e5f63b189b78dccf0b97ac41f0d228:joybird1                 
+   ec5f0b1826389df8622133014e88afde:ryjd1982                 
+   2233287f476ba63323e60addca1f6b64:kirkles                  
+   68a96446a5afb4ab69a2d15091771e39:emilybffl                
+   6539bbb84fe2de2628fc5e4f2a31f23a:ddmack                   
                                                              
    Session..........: hashcat
    Status...........: Cracked
@@ -104,14 +108,15 @@ To use the `rockyou` wordlist, or some other wordlists in kali you may need to e
    Stopped: Sun Feb 22 02:34:27 2026
    
    ```
-   
+
    Analyzing these results, we can see the results of the cracked passwords.
-   
-   > [!WARNING]
-   >
-   > **[Results Redacted]**
+
+   ```
+   32e5f63b189b78dccf0b97ac41f0d228:joybird1                 
+   ec5f0b1826389df8622133014e88afde:ryjd1982                 
+   2233287f476ba63323e60addca1f6b64:kirkles                  
+   68a96446a5afb4ab69a2d15091771e39:emilybffl                
+   6539bbb84fe2de2628fc5e4f2a31f23a:ddmack            
+   ```
 
    This is our answer to the challenge- make sure to match the hash with the instructions.
-
-
-
