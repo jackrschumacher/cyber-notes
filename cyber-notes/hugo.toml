@@ -22,6 +22,9 @@ enableGitInfo = true
   # This specific theme parameter relies on enableGitInfo being true at the top level
   BookLastChangeLink = 'https://github.com/jackrschumacher/cyber-notes/commit/{{ .GitInfo.Hash }}'
 
+[taxonomies]
+  category = 'categories'
+
 [markup]
   [markup.tableOfContents]
       startLevel = 1
@@ -29,3 +32,39 @@ enableGitInfo = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[menu]
+[[menu.home]]
+  name = 'Log analysis'
+  pageRef = '/Log analysis'
+  weight = 1
+[[menu.home]]
+  name = 'Log analysis'
+  pageRef = '/OSINT'
+  weight = 2
+[[menu.home]]
+  name = 'Log analysis'
+  pageRef = '/Walkthroughs'
+  weight = 3
+[[menu.after]]
+  name = ''
+  weight = 9
+
+
+[[menu.after]]
+  identifier = 'changelog-main'
+  name = 'Changelog'
+  url = '/changelog'
+  weight = 10
+
+[[menu.after]]
+  parent = 'changelog-main'
+  name = 'RSS'
+  url = '/changelog/index.xml'
+  weight = 1
+[[menu.after]]
+  parent = 'changelog-main'
+  name = 'Latest commits'
+  url = '/Other/Repositories'
+  weight = 2
+  
