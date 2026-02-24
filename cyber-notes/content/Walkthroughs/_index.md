@@ -1,6 +1,6 @@
 ---
 title: Walkthroughs
-weight: 1
+weight: 3
 bookCollapseSection: false  # Optional: Makes the class folder clickable/collapsible
 ---
 
