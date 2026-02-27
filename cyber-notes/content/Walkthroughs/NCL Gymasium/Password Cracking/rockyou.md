@@ -79,11 +79,7 @@ To use the `rockyou` wordlist, or some other wordlists in kali you may need to e
 5. After completing the run, `hashcat` should return something like the following:
 
    ```
-   32e5f63b189b78dccf0b97ac41f0d228:joybird1                 
-   ec5f0b1826389df8622133014e88afde:ryjd1982                 
-   2233287f476ba63323e60addca1f6b64:kirkles                  
-   68a96446a5afb4ab69a2d15091771e39:emilybffl                
-   6539bbb84fe2de2628fc5e4f2a31f23a:ddmack                   
+   [REMOVE]   
                                                              
    Session..........: hashcat
    Status...........: Cracked
@@ -108,15 +104,11 @@ To use the `rockyou` wordlist, or some other wordlists in kali you may need to e
    Stopped: Sun Feb 22 02:34:27 2026
    
    ```
-
+   
    Analyzing these results, we can see the results of the cracked passwords.
-
+   
    ```
-   32e5f63b189b78dccf0b97ac41f0d228:joybird1                 
-   ec5f0b1826389df8622133014e88afde:ryjd1982                 
-   2233287f476ba63323e60addca1f6b64:kirkles                  
-   68a96446a5afb4ab69a2d15091771e39:emilybffl                
-   6539bbb84fe2de2628fc5e4f2a31f23a:ddmack            
+   [REMOVED]
    ```
 
    This is our answer to the challenge- make sure to match the hash with the instructions.
