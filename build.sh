@@ -11,7 +11,7 @@ main() {
 
   DART_SASS_VERSION=1.97.3
   GO_VERSION=1.25.6
-  HUGO_VERSION_HVM=$(cat jackrschumacher/.hvm)
+  HUGO_VERSION_HVM=$(cat cyber-notes/.hvm)
   HUGO_VERSION="${HUGO_VERSION_HVM#v}"
   NODE_VERSION=24.13.0
 
