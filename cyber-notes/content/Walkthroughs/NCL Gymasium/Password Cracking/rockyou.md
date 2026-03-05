@@ -6,7 +6,7 @@ date: 2026-02-21
 
 # Rockyou.txt walkthrough
 
-| **Challenge Type** | **Difficulty** |     **Flag format/questio**      |
+| **Challenge Type** | **Difficulty** |     **Flag format/question**     |
 | :----------------: | :------------: | :------------------------------: |
 | Password Cracking  |      Easy      | The text of the cracked password |
 
