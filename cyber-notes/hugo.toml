@@ -62,9 +62,9 @@ enableGitInfo = true
   name = 'RSS'
   url = '/changelog/index.xml'
   weight = 1
+
 [[menu.after]]
-  parent = 'changelog-main'
-  name = 'Latest commits'
+  name = 'Repositories'
   url = '/Other/Repositories'
-  weight = 2
+  weight = 9
   
