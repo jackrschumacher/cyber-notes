@@ -2,25 +2,21 @@ baseURL = 'https://cyber.jackrschumacher.com'
 languageCode = 'en-us'
 title = 'Cybersecurity Notes'
 
-# MOVE THIS TO THE TOP LEVEL (OUT OF PARAMS)
 enableGitInfo = true
 
-# ADD THIS BLOCK
 [frontmatter]
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
 
 [module]
   [[module.imports]]
-    path = 'github.com/alex-shpak/hugo-book'
+    # 1. Update the theme module
+    path = 'github.com/McShelby/hugo-theme-relearn'
 
 [params]
-  BookSection = '*'
-  BookTheme = 'auto'
-  BookSearch = true
-  BookFavicon = 'favicon-32x32.png'
-  BookDateFormat = 'January 2, 2006'
-  # This specific theme parameter relies on enableGitInfo being true at the top level
-  BookLastChangeLink = 'https://github.com/jackrschumacher/cyber-notes/commit/{{ .GitInfo.Hash }}'
+  # 2. Relearn Theme equivalents for your old BookTheme settings
+   themeVariant = 'custom-auto' # Automatically switches between light and dark
+  
+ 
 
 [taxonomies]
   category = 'categories'
@@ -33,38 +29,10 @@ enableGitInfo = true
     [markup.goldmark.renderer]
       unsafe = true
 
+# 3. Your custom menus (Note: Relearn automatically builds the main sidebar from your content folders. These will appear as top-bar or shortcut links depending on configuration)
 [menu]
-[[menu.home]]
-  name = 'Log analysis'
-  pageRef = '/Log analysis'
-  weight = 1
-[[menu.home]]
-  name = 'Log analysis'
-  pageRef = '/OSINT'
-  weight = 2
-[[menu.home]]
-  name = 'Log analysis'
-  pageRef = '/Walkthroughs'
-  weight = 3
-[[menu.after]]
-  name = ''
-  weight = 9
 
-
-[[menu.after]]
-  identifier = 'changelog-main'
-  name = 'Changelog'
-  url = '/changelog'
-  weight = 10
-
-[[menu.after]]
-  parent = 'changelog-main'
-  name = 'RSS'
-  url = '/changelog/index.xml'
-  weight = 1
-
-[[menu.after]]
+[[menu.shortcuts]]
   name = 'Repositories'
   url = '/Other/Repositories'
   weight = 9
-  

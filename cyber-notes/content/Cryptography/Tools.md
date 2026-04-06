@@ -2,8 +2,6 @@
 title: Tools
 ---
 
-# Tools
-
 ## Web Tools
 
 {{< button href="https://gchq.github.io/CyberChef/" >}}CyberChef (Web){{< /button >}}

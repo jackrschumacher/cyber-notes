@@ -3,9 +3,9 @@ title: Terminal tools
 weight: 1
 ---
 
-# Parsing tools
+## Parsing tools
 
-## grep
+### grep
 
 - You can use grep in order to search through files looking for key words like ssh when analyzing logs
 
@@ -17,7 +17,7 @@ grep '[search]' [filename.txt]
 
 {{< button href="https://man7.org/linux/man-pages/man1/grep.1.html" >}}Grep Man Page{{< /button >}}
 
-### Options
+#### Options
 
 ```
 -i, --ignore-case
@@ -106,11 +106,11 @@ grep '[search]' [filename.txt]
 | **Exact repetitions** | `{n}`   | `-E` | `grep -E "9{3}" file`      |
 | **Literal dot/star**  | `\.`    | None | `grep "example\.com" file` |
 
-## wc
+### wc
 
 - Can be used to count lines using the `wc -l` command
 
-### Options
+#### Options
 
 | Short Option | Long Option         | Description                                                  |
 | ------------ | ------------------- | ------------------------------------------------------------ |
@@ -123,13 +123,13 @@ grep '[search]' [filename.txt]
 |              | `--help`            | Displays the help message and exits.                         |
 |              | `--version`         | Displays version information and exits.                      |
 
-## uniq
+### uniq
 
 - Can be used to filter out non-unique 
 
 
 
-### Options
+#### Options
 
 | Short Option | Long Option               | Description                                                 |
 | ------------ | ------------------------- | ----------------------------------------------------------- |
@@ -146,9 +146,9 @@ grep '[search]' [filename.txt]
 |              | `--help`                  | Displays the help message and exits.                        |
 |              | `--version`               | Displays version information and exits.                     |
 
-## awk
+### awk
 
-### Options
+#### Options
 
 | Short Option | Long Option               | Description                                                  |
 | ------------ | ------------------------- | ------------------------------------------------------------ |
@@ -163,7 +163,7 @@ grep '[search]' [filename.txt]
 |              | `--help`                  | Displays the help message and exits.                         |
 |              | `--version`               | Displays version information and exits.                      |
 
-## head
+### head
 
 - Show the first lines of a file
 - Can show a set number of lines using the `-n` flag
@@ -172,7 +172,7 @@ grep '[search]' [filename.txt]
 
 {{< button href="https://man7.org/linux/man-pages/man1/head.1.html" >}}head man page{{< /button >}}
 
-### Options
+#### Options
 
 | Short Option | Long Option           | Description                                                  |
 | ------------ | --------------------- | ------------------------------------------------------------ |
@@ -184,9 +184,9 @@ grep '[search]' [filename.txt]
 |              | `--help`              | Displays the help message and exits.                         |
 |              | `--version`           | Displays version information and exits.                      |
 
-## Sort
+### Sort
 
-### Options
+#### Options
 
 | Short Option | Long Option               | Description                                                  |
 | ------------ | ------------------------- | ------------------------------------------------------------ |
