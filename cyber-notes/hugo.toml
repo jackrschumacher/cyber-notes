@@ -16,6 +16,7 @@ enableGitInfo = true
   # 2. Relearn Theme equivalents for your old BookTheme settings
    themeVariant = "auto"
    collapsibleMenu = true
+   titleSeparator = "-"
  
 
 [taxonomies]
