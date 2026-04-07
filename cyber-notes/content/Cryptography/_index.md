@@ -1,6 +1,8 @@
 ---
 title: Cryptography
 weight: 6
-chapter: true
+
 ---
+
+Cryptography tools and techniques
 

@@ -1,8 +1,8 @@
 ---
 title: Other
-weight: 1
-build:
-  list: never
-chapter: true
+weight: 10
+hidden: false
+
 ---
 
+Other cybersecurity tools

@@ -1,0 +1,10 @@
+<ul style="list-style-type: none; padding-left: 0;">
+  {{ range .Page.Pages.ByDate.Reverse }}
+    <li style="margin-bottom: 8px;">
+      <span style="font-family: monospace; color: #888; margin-right: 8px;">
+        {{ .Date.Format "2006-01-02" }}
+      </span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>

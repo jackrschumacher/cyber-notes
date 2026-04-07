@@ -1,6 +1,7 @@
 ---
 title: OSINT
 weight: 1
-chapter: true
+url: "/osint/osint-tools/"
 ---
 
+OSINT Tools and techniques

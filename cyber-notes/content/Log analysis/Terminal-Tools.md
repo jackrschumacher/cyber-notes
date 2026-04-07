@@ -207,6 +207,30 @@ grep '[search]' [filename.txt]
 
 
 
+### lnav
+
+- Used to traverse and sort log files
+
+| Option | Description |
+| :--- | :--- |
+| `-h`, `--help` | Display the help message and exit. |
+| `-V`, `--version` | Print the version of `lnav`. |
+| `-H` | Display the internal help text/manual within the `lnav` interface. |
+| `-i` | Install the format files found in the specified directory. |
+| `-u` | Update the internal format configuration. |
+| `-I <path>` | Add a configuration directory to the search path. |
+| `-c <cmd>` | Execute a specific `lnav` command (like `:goto 10:00`) after the files are loaded. |
+| `-f <path>` | Execute the commands contained within the specified file. |
+| `-d <path>` | Write debug logs to the specified file. |
+| `-n` | Run without the curses UI (useful with `-c` for headless processing). |
+| `-r` | Recursively load files from the specified directories. |
+| `-t` | Prepend timestamps to lines of data piped in through standard input. |
+| `-w <file>` | Write the contents of standard input to a file and tail it. |
+| `-q` | Quiet mode; do not print the log messages to stdout when running headlessly. |
+| `-a` | Load all generated logs, even if they appear to be duplicates. |
+
+
+
 ## Examples
 
 ### Search

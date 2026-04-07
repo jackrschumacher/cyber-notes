@@ -1,0 +1,4 @@
+/* This hides the Changelog from the main navigation list, even when active */
+#sidebar ul.topics li[data-nav-id="/changelog/"] {
+    display: none !important;
+}

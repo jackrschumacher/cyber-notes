@@ -14,12 +14,13 @@ enableGitInfo = true
 
 [params]
   # 2. Relearn Theme equivalents for your old BookTheme settings
-   themeVariant = 'custom-auto' # Automatically switches between light and dark
-  
+   themeVariant = "auto"
+   collapsibleMenu = true
  
 
 [taxonomies]
   category = 'categories'
+  tag = "tags"
 
 [markup]
   [markup.tableOfContents]
@@ -28,11 +29,6 @@ enableGitInfo = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
+    [markup.goldmark.parser.attribute]
+      block = true
 # 3. Your custom menus (Note: Relearn automatically builds the main sidebar from your content folders. These will appear as top-bar or shortcut links depending on configuration)
-[menu]
-
-[[menu.shortcuts]]
-  name = 'Repositories'
-  url = '/Other/Repositories'
-  weight = 9
