@@ -7,7 +7,7 @@ weight: 3
 
 ### Decoding
 
-{{< button href="https://gchq.github.io/CyberChef/" >}}CyberChef{{< /button >}}
+{{< button href="https://cyberchef.jackrschumacher.com" >}}CyberChef{{< /button >}}
 
 ### Parsing
 

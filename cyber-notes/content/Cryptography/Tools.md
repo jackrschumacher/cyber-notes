@@ -4,7 +4,7 @@ title: Tools
 
 ## Web Tools
 
-{{< button href="https://gchq.github.io/CyberChef/" >}}CyberChef (Web){{< /button >}}
+{{< button href="https://cyberchef.jackrschumacher.com" >}}CyberChef (Web){{< /button >}}
 
 ## Terminal Tools
 
