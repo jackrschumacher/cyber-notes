@@ -83,7 +83,22 @@ john --wordlist=[wordlist location] [file to crack] --fork=$(nproc) #Use all ava
 
 - Uses all available cpu cores to compare the password against the wordlist 
 
+## Ophcrack
 
+### Ophcrack CLI Options
+
+While Ophcrack is most famous for its graphical interface, it also has a command-line interface (CLI) that functions similarly to the table you provided. Here is a breakdown of common Ophcrack CLI commands and flags:
+
+| **Command**                    | **Description**                                              | **Example**                             |
+| ------------------------------ | ------------------------------------------------------------ | --------------------------------------- |
+| **Load PWDump File**           | Loads target Windows hashes from a standard PWDump formatted text file. | `ophcrack -f hashes.txt`                |
+| **Specify Table Directory**    | Sets the root directory where your pre-computed Rainbow Tables are stored. | `ophcrack -d /path/to/tables/`          |
+| **Load from SAM**              | Extracts and loads hashes directly from a local Windows SAM and SYSTEM registry hive directory. | `ophcrack -w /Windows/System32/config/` |
+| **Select Specific Tables**     | Specifies exactly which installed rainbow tables to activate for the current cracking session. | `ophcrack -t XP_free_fast,Vista_free`   |
+| **Set Thread Count**           | Defines the number of CPU threads Ophcrack will use, improving performance on multi-core systems. | `ophcrack -n 4 -f hashes.txt`           |
+| **Export Results**             | Exports the successfully cracked passwords and session details to a specified CSV file. | `ophcrack -f hashes.txt -x results.csv` |
+| **Disable GUI (Console Mode)** | Forces Ophcrack to run entirely in the terminal interface without launching the graphical window. | `ophcrack -s -f hashes.txt`             |
+| **Display Help**               | Prints the full list of available command-line arguments and usage instructions. | `ophcrack -h`                           |
 
 
 
