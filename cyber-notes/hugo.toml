@@ -1,5 +1,5 @@
 baseURL = 'https://cyber.jackrschumacher.com'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Cybersecurity Notes'
 
 enableGitInfo = true
